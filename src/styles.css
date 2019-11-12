@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+header{
+    margin-bottom: 10px;
+}
+.navbar {
+    background-color : #005CBF !important;
+    border-bottom-color: #001F40;
+}
+.navbar .navbar-brand,
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:active,
+.navbar .navbar-brand:visited
+{
+    color:#FFF;
+}
+.btn-primary {
+    color: #FFF !important;
+}
+
+#search-product{
+    width: 90%;
+    margin-right: 5px; 
+}
+.row h1{
+    margin: 15px;
+}
+
+.modal-header {
+    background-color : #005CBF !important;
+    color:#FFF
+}
+
+.list-group-item.disabled, .list-group-item:disabled {
+    background-color: #dedede;
+}
+
+@media screen and (max-width: 800px) {
+    #search-product{
+        width: 80%;
+        margin-right: 2%; 
+    }
+}
