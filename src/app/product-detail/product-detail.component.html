@@ -36,7 +36,7 @@
 
     </div>
 
-    <div class="row">
+    <div class="row justify-content-center">
         <h2>Você pode se interessar também por:</h2>
     </div>
 
@@ -55,8 +55,7 @@
                             <strong class="d-inline-block mb-2 text-primary">Preço
                                 {{prod.price | currency:'BRL':true}}</strong>
 
-                            <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modal-seller"
-                                role="button">Mais Informações</a>
+                            <a class="btn btn-primary" routerLink="/product/{{prod.id}}" role="button">Mais Informações</a>
                         </div>
                     </div>
                 </div>
@@ -64,51 +63,6 @@
         </ng-template>
     </ngb-carousel>
 
-    <!-- <div class="row">
-        <div class="col-md-12">
-            <div id="blogCarousel" class="carousel slide" >
-                <ol class="carousel-indicators">
-                    <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#blogCarousel" data-slide-to="1"></li>
-                </ol>
-
-                <div class="carousel-inner">
-
-                    <div class="carousel-item" *ngFor="let prod of productList">
-                        <div class="row justify-content-center">
-                            <div class="col-md-6 col-xs-12">
-                                <div
-                                    class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                                    <div class="col-auto d-lg-block">
-                                        <img class="Thumbnail" src="http://localhost:3000/img/img.jpg"
-                                            alt="Camiseta branca" height="287px">
-                                    </div>
-                                    <div class="col p-4 d-flex flex-column position-static">
-                                        <h3 class="mb-0">Camiseta básica</h3>
-                                        <strong class="d-inline-block mb-2 text-primary">Preço R$ 100,00</strong>
-                                        <p class="card-text mb-auto">Tamanhos disponíveis:</p>
-                                        <ul class="list-group list-group-horizontal">
-                                            <li class="list-group-item list-group-item-action">P</li>
-                                            <li class="list-group-item list-group-item-action">M</li>
-                                            <li class="list-group-item list-group-item-action">G</li>
-                                        </ul>
-                                        <p class="card-text mb-auto">Cores disponíveis:</p>
-                                        <ul class="list-group list-group-horizontal">
-                                            <li class="list-group-item list-group-item-action">Azul</li>
-                                            <li class="list-group-item list-group-item-action ">Vermelho</li>
-                                            <li class="list-group-item list-group-item-action">Branco</li>
-                                        </ul>
-                                        <br />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div> -->
 </div>
 
 <div class="modal" id="modal-seller" tabindex="-1" role="dialog">

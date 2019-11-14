@@ -1,4 +1,6 @@
 import { Component, OnInit, Injectable } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../model/product.model'
 
@@ -10,20 +12,30 @@ import { Product } from '../model/product.model'
 @Injectable()
 export class ProductDetailComponent implements OnInit {
 
+  id: number;
   product: Product = new Product("", "", []);
   productList: Product[];
   sizeSelected: number;
 
   images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.http.get("http://localhost:3000/api/products/1")
-    .subscribe((data: Product) => {
-      this.product = data;
-      this.sizeSelected = 0;
-    })
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.id = +params['id'];
+
+          this.http.get("http://localhost:3000/api/products/" + this.id)
+          .subscribe((data: Product) => {
+            this.product = data;
+            this.sizeSelected = 0;
+          })
+        }
+      );
+
+
 
     this.http.get("http://localhost:3000/api/products")
     .subscribe((data: Product[]) => {
