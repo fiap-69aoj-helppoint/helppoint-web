@@ -14,6 +14,8 @@ export class ProductDetailComponent implements OnInit {
   productList: Product[];
   sizeSelected: number;
 
+  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -28,7 +30,6 @@ export class ProductDetailComponent implements OnInit {
       this.productList = data;
       this.sizeSelected = 0;
       console.log(this.productList);
-      $('.carousel').carousel()
     })
   }
 
