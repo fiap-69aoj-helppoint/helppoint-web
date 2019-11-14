@@ -11,6 +11,7 @@ import { Product } from '../model/product.model'
 export class ProductDetailComponent implements OnInit {
 
   product: Product = new Product("", "", []);
+  productList: Product[];
   sizeSelected: number;
 
   constructor(private http: HttpClient) { }
@@ -20,7 +21,14 @@ export class ProductDetailComponent implements OnInit {
     .subscribe((data: Product) => {
       this.product = data;
       this.sizeSelected = 0;
-      console.log(this.product)
+    })
+
+    this.http.get("http://localhost:3000/api/products")
+    .subscribe((data: Product[]) => {
+      this.productList = data;
+      this.sizeSelected = 0;
+      console.log(this.productList);
+      $('.carousel').carousel()
     })
   }
 
