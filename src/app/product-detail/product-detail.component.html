@@ -47,7 +47,7 @@
                     <div
                         class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div class="col-auto d-lg-block">
-                            <img class="Thumbnail" [src]="product.image" alt="{{product.description}}" height="350px">
+                            <img class="Thumbnail" [src]="prod.image" alt="{{prod.description}}" height="350px">
 
                         </div>
                         <div class="col p-4 d-flex flex-column position-static">
@@ -55,7 +55,7 @@
                             <strong class="d-inline-block mb-2 text-primary">Preço
                                 {{prod.price | currency:'BRL':true}}</strong>
 
-                            <a class="btn btn-primary" routerLink="/product/{{prod.id}}" role="button">Mais Informações</a>
+                            <a class="btn btn-primary" (click)="search(prod.id)" role="button">Mais Informações</a>
                         </div>
                     </div>
                 </div>

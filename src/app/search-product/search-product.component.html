@@ -1,9 +1,9 @@
 <div class="container-fluid">
     <form>
         <div class="form-inline">
-            <input type="text" class="form-control form-control-lg" id="search-product"
+            <input type="text" name="idPesquisa" class="form-control form-control-lg" id="search-product" [(ngModel)]="idPesquisa"
                 placeholder="Digite o código de barras ou o nome do produto" required="true">
-            <a routerLink="/product/1" class="btn btn-primary">Buscar</a>
+            <a (click)="search()" class="btn btn-primary">Buscar</a>
         </div>
     </form>
 </div>
