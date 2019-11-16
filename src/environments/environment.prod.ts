@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://helppoint_product:8092'
+  apiUrl: 'http://localhost:8092'
 };

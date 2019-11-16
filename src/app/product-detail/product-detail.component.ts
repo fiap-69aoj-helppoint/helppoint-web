@@ -31,13 +31,13 @@ export class ProductDetailComponent implements OnInit {
   }
 
   search(id: number) {
-    this.http.get(environment.apiUrl + "/products/" + id)
+    this.http.get(environment.apiUrl + "/product/products/" + id)
     .subscribe((data: Product) => {
       this.product = data;
       this.sizeSelected = 0;
     })
 
-    this.http.get(environment.apiUrl + "/products/" + id  + "/related")
+    this.http.get(environment.apiUrl + "/product/products/" + id  + "/related")
     .subscribe((data: Product[]) => {
       this.productList = data;
       this.sizeSelected = 0;
